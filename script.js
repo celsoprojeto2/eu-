@@ -27,8 +27,8 @@ const messages = {
     'msg2': '❤️ Não acredito que clicou no segundo!!! te amo, mais que ontem, e menos que amanhã!',
     'msg3': '💕 Você não sabe como é maravilhoso ter uma pessoa como vc em minha vida, é muito mais que o ar que eu respiro, muito mais que a luz da minha vida! é tudo!',
     'msg4': '💌 Acho que nosso amor é que nem vinho, encorpora e fica mais saboroso com o passar do tempo, nem sei se vinho encorpora mas que se lasque, o importante é a frase funcionar!',
-    'msg5': '💓 **5º Ano: A Família:** Nossos sonhos, nossos planos, a base do nosso ninho. (Mude esta frase!)',
-    'msg6': '💞 **6º Ano: Admiração:** Admiro a sua força, o seu caráter e a sua doçura. Você me inspira a ser melhor. (Mude esta frase!)',
+    'msg5': '💓 Não sei se vc percebeu mas coloquei 16 icones para comemorar os 16 anos de namoro/casamento, agora para criar 16 frases ta foda kkkk',
+    'msg6': '💞 As vezes relembro tudo que passamos juntos, limitado pela minha memoria falha, e fico imaginando quanto tempo mais temos pela frente, ai me vem um sentimenro... CLIQUE NO ANEL',
     'msg7': '💘 **7º Ano: A Aventura:** As viagens, os desafios e as vitórias que só compartilhamos. (Mude esta frase!)',
     'msg8': '💗 **8º Ano: A Razão:** Você é a melhor parte do meu dia, todos os dias. Você é a minha razão para sorrir. (Mude esta frase!)',
     'msg9': '😍 **9º Ano: O Olhar:** Sua beleza não está só no seu rosto, mas na sua alma. Você é linda por dentro e por fora. (Mude esta frase!)',
@@ -77,5 +77,6 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 }
+
 
 
