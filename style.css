@@ -1,80 +1,253 @@
-// --- CONFIGURAÇÃO DA SENHA ---
-const CORRECT_PASSWORD = "eu+";
+/* --- ESTILOS GERAIS E PAPEL DE PAREDE --- */
+body {
+    background-color: #ffffff; 
+    background-image: 
+        radial-gradient(circle, rgba(255, 192, 203, 0.4) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255, 0, 0, 0.3) 1px, transparent 1px);
+    background-size: 50px 50px, 80px 80px;
+    background-position: 0 0, 40px 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    height: auto;
+    color: #333;
+}
 
-function checkPassword() {
-    const enteredPassword = document.getElementById('password-input').value;
-    const loginScreen = document.getElementById('login-screen');
-    const mainContent = document.getElementById('main-content');
-    const message = document.getElementById('message');
+/* --- ESTILOS DA TELA DE LOGIN --- */
+#login-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
 
-    if (enteredPassword === CORRECT_PASSWORD) {
-        loginScreen.style.display = 'none';
-        mainContent.style.display = 'block';
-        document.body.style.height = 'auto';
-        document.title = "❤️ FELIZ 16 ANOS, MEU AMOR! ❤️"; 
-    } else {
-        message.textContent = 'Senha incorreta. Tente novamente, meu amor.';
-        document.getElementById('password-input').value = '';
-    }
+.login-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+    text-align: center;
+    max-width: 90%; 
+}
+
+.login-box h2 {
+    color: #ff69b4;
+    margin-bottom: 20px;
+}
+
+#password-input {
+    padding: 12px;
+    margin: 15px auto;
+    border: 2px solid #ffc0cb;
+    border-radius: 8px;
+    display: block;
+    width: 250px;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    text-align: center;
+}
+
+.login-box button {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.login-box button:hover {
+    background-color: #ff1493;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* --- ESTILOS DO CONTEÚDO PRINCIPAL --- */
+#main-content {
+    text-align: center;
+    padding: 20px;
+    min-height: 100vh;
+    height: auto;
+}
+
+header {
+    position: relative;
+    z-index: 5; 
+    margin-bottom: 40px;
+}
+
+header h1 {
+    color: #ff1493;
+    font-size: 2.5em;
+}
+
+/* --- ESTILOS DOS CORAÇÕES (DESKTOP: FLUTUANTE) --- */
+.heart-links-container {
+    position: relative;
+    width: 100%;
+    min-height: 85vh;
+}
+
+.heart-link {
+    position: absolute; /* Desktop: Posição absoluta */
+    font-size: 70px; /* Desktop: Tamanho grande */
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+    transition: transform 0.5s, opacity 0.5s;
+    opacity: 0.3; /* Transparência inicial */
+    line-height: 1; 
+}
+
+.heart-link:hover {
+    transform: scale(1.1);
+    opacity: 0.7;
+}
+
+/* Estilo para coração JÁ CLICADO (perde a transparência) */
+.heart-link.clicked {
+    opacity: 1; 
+    transform: scale(1.2);
+    cursor: default; 
+    animation: pulse 1s 1; 
+}
+
+@keyframes pulse {
+    0% { transform: scale(1.2); }
+    50% { transform: scale(1.5); }
+    100% { transform: scale(1.2); }
+}
+
+/* --- POSICIONAMENTO E ROTAÇÃO INDIVIDUAL DOS 16 CORAÇÕES (DESKTOP) --- */
+#heart-1 { top: 5%; left: 10%; font-size: 90px; transform: rotate(-15deg); }
+#heart-2 { top: 25%; left: 85%; font-size: 60px; transform: rotate(45deg); }
+#heart-3 { top: 50%; left: 35%; font-size: 100px; transform: rotate(-30deg); }
+#heart-4 { top: 70%; left: 65%; font-size: 75px; transform: rotate(10deg); }
+#heart-5 { top: 85%; left: 15%; font-size: 85px; transform: rotate(20deg); }
+#heart-6 { top: 35%; left: 55%; font-size: 50px; transform: rotate(-45deg); }
+#heart-7 { top: 15%; left: 40%; font-size: 110px; transform: rotate(60deg); }
+#heart-8 { top: 65%; left: 80%; font-size: 65px; transform: rotate(-5deg); }
+#heart-9 { top: 40%; left: 5%; font-size: 95px; transform: rotate(35deg); }
+#heart-10 { top: 10%; left: 70%; font-size: 70px; transform: rotate(-25deg); }
+#heart-11 { top: 5%; left: 55%; font-size: 80px; transform: rotate(50deg); }
+#heart-12 { top: 80%; left: 50%; font-size: 90px; transform: rotate(-10deg); }
+#heart-13 { top: 20%; left: 15%; font-size: 75px; transform: rotate(15deg); }
+#heart-14 { top: 60%; left: 30%; font-size: 60px; transform: rotate(-40deg); }
+#heart-15 { top: 45%; left: 75%; font-size: 105px; transform: rotate(5deg); }
+#heart-16 { top: 90%; left: 95%; font-size: 55px; transform: rotate(70deg); }
+
+
+/* --- ESTILOS DO MODAL/POPUP (Funcionando em ambas as telas) --- */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 10; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5); 
+}
+
+.modal-content {
+    background-color: #fff0f5; 
+    margin: 15% auto;
+    padding: 30px;
+    border: 5px solid #ff69b4;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.7);
+    text-align: center;
+    animation: fadeIn 0.5s;
+}
+
+#popup-text {
+    font-size: 1.2em;
+    color: #ff1493;
+    font-weight: 600;
+}
+
+.close-button {
+    color: #ff1499;
+    float: right;
+    font-size: 35px;
+    font-weight: bold;
+    line-height: 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #ff0000;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 
-// --- CONFIGURAÇÃO DOS POPUPS (MODAIS) ---
-
-// **IMPORTANTE: 16 MENSAGENS PARA VOCÊ EDITAR**
-const messages = {
-    'msg1': '💖 **1º Ano: O Início:** Nossas primeiras risadas, o frio na barriga e a certeza de que tínhamos algo especial. Você é a magia nos meus dias. (Mude esta frase!)',
-    'msg2': '❤️ **2º Ano: A Descoberta:** Descobrir sua alma e seu coração foi o maior presente. (Mude esta frase!)',
-    'msg3': '💕 **3º Ano: A Conexão:** Nossas conversas, risadas bobas e a cumplicidade que só a gente tem... É por isso que te amo tanto! (Mude esta frase!)',
-    'msg4': '💌 **4º Ano: O Compromisso:** Quando dissemos "sim" para a vida inteira. Lembro de cada detalhe daquele dia. (Mude esta frase!)',
-    'msg5': '💓 **5º Ano: A Família:** Nossos sonhos, nossos planos, a base do nosso ninho. (Mude esta frase!)',
-    'msg6': '💞 **6º Ano: Admiração:** Admiro a sua força, o seu caráter e a sua doçura. Você me inspira a ser melhor. (Mude esta frase!)',
-    'msg7': '💘 **7º Ano: A Aventura:** As viagens, os desafios e as vitórias que só compartilhamos. (Mude esta frase!)',
-    'msg8': '💗 **8º Ano: A Razão:** Você é a melhor parte do meu dia, todos os dias. Você é a minha razão para sorrir. (Mude esta frase!)',
-    'msg9': '😍 **9º Ano: O Olhar:** Sua beleza não está só no seu rosto, mas na sua alma. Você é linda por dentro e por fora. (Mude esta frase!)',
-    'msg10': '🌹 **10º Ano: O Marco:** Uma década ao seu lado! Meu amor, cada ano é melhor que o anterior. (Mude esta frase!)',
-    'msg11': '💍 **11º Ano: A Firmeza:** Nossa relação é como uma rocha, forte e inabalável. (Mude esta frase!)',
-    'msg12': '🥂 **12º Ano: As Celebrações:** Por todos os momentos que brindamos e pelos que ainda virão. (Mude esta frase!)',
-    'msg13': '✨ **13º Ano: A Luz:** Você é a pessoa mais luminosa que eu conheço. Obrigado por iluminar minha vida. (Mude esta frase!)',
-    'msg14': '😘 **14º Ano: Carinho:** Mesmo depois de tanto tempo, seu abraço é o meu lugar favorito no mundo. (Mude esta frase!)',
-    'msg15': '🥂 **15º Ano: O Amor Maduro:** Olhar para trás e ver tudo que construímos me enche de orgulho. Te amo! (Mude esta frase!)',
-    'msg16': '❤️ **16º Ano: A Eternidade:** Feliz 16 anos, meu amor! Te amo hoje, amanhã e para sempre! Com todo meu carinho. Assinado: Seu "Eu+". (Mude esta frase!)'
-};
-
-
-// FUNÇÃO CORRIGIDA PARA GARANTIR QUE O POPUP APAREÇA
-function openPopup(heartElement) {
-    const messageId = heartElement.getAttribute('data-message-id');
-    const modal = document.getElementById('my-popup');
-    const popupText = document.getElementById('popup-text');
+/* ========================================================= */
+/* --- ADAPTAÇÃO PARA TELAS DE CELULAR (MÁX. 600PX) --- */
+/* ========================================================= */
+@media (max-width: 600px) {
     
-    // 1. Marca o coração como clicado
-    heartElement.classList.add('clicked');
-    
-    // 2. Exibe a mensagem correspondente
-    if (messages[messageId]) {
-        // Usa innerHTML para processar negrito (**)
-        popupText.innerHTML = messages[messageId]; 
-    } else {
-        popupText.innerHTML = "Erro ao carregar mensagem. 😢";
+    /* Títulos menores no celular */
+    header h1 {
+        font-size: 1.8em;
+    }
+    header p {
+        font-size: 0.9em;
     }
 
-    // 3. Torna o modal visível
-    modal.style.display = 'block';
+    /* 1. CONTAINER: Força Flexbox (Grade) */
+    .heart-links-container {
+        position: static; /* DESATIVA O ABSOLUTE (FLUTUANTE) */
+        display: flex; 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        align-items: center;
+        min-height: auto; 
+        padding: 10px 0;
+    }
 
-    // Para evitar que o clique no coração recarregue a página (retorna false)
-    return false; 
-}
+    /* 2. CORAÇÕES: Reduz o tamanho, organiza em grade e remove rotação */
+    .heart-link {
+        position: static; 
+        font-size: 30px; /* TAMANHO PEQUENO PARA CABER NA TELA */
+        margin: 10px; 
+        flex-basis: auto; 
+        text-align: center;
+        transform: none !important; /* Remove explicitamente a rotação */
+        line-height: 1; 
+    }
+    
+    /* 3. Desativa o posicionamento absoluto do Desktop no Mobile */
+    #heart-1, #heart-2, #heart-3, #heart-4, #heart-5, #heart-6, 
+    #heart-7, #heart-8, #heart-9, #heart-10, #heart-11, #heart-12, 
+    #heart-13, #heart-14, #heart-15, #heart-16 {
+        top: auto; 
+        left: auto; 
+        font-size: 30px; 
+        transform: none; 
+    }
 
-function closePopup() {
-    const modal = document.getElementById('my-popup');
-    modal.style.display = 'none';
-}
-
-// Fecha o popup se o usuário clicar fora da caixa do modal
-window.onclick = function(event) {
-    const modal = document.getElementById('my-popup');
-    if (event.target == modal) {
-        modal.style.display = 'none';
+    /* 4. Ajustar modal para celular */
+    .modal-content {
+        margin: 5% auto;
+        max-width: 95%; 
+        padding: 20px;
     }
 }
