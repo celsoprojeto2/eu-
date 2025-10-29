@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para o Meu Amor - Feliz 16 Anos!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="login-screen">
+        <div class="login-box">
+            <h2>🎉 Acesso Exclusivo 🎉</h2>
+            <p>Um pequeno segredo para a maior surpresa.</p>
+            <input type="password" id="password-input" placeholder="Nossa senha secreta..." required>
+            <button onclick="checkPassword()">Entrar</button>
+            <p id="message" class="error-message"></p>
+        </div>
+    </div>
+
+    <div id="main-content" style="display: none;">
+        <header>
+            <h1>Feliz 16 Anos de Casados, Minha Vida!</h1>
+            <p>Clique nos 16 corações flutuantes para ler as mensagens e torná-los permanentes! 😉</p>
+        </header>
+
+        <div class="heart-links-container">
+            <a href="#" class="heart-link" id="heart-1" data-message-id="msg1" onclick="openPopup(this)">💖</a>
+            <a href="#" class="heart-link" id="heart-2" data-message-id="msg2" onclick="openPopup(this)">❤️</a>
+            <a href="#" class="heart-link" id="heart-3" data-message-id="msg3" onclick="openPopup(this)">💕</a>
+            <a href="#" class="heart-link" id="heart-4" data-message-id="msg4" onclick="openPopup(this)">💌</a>
+            <a href="#" class="heart-link" id="heart-5" data-message-id="msg5" onclick="openPopup(this)">💓</a>
+            <a href="#" class="heart-link" id="heart-6" data-message-id="msg6" onclick="openPopup(this)">💞</a>
+            <a href="#" class="heart-link" id="heart-7" data-message-id="msg7" onclick="openPopup(this)">💘</a>
+            <a href="#" class="heart-link" id="heart-8" data-message-id="msg8" onclick="openPopup(this)">💗</a>
+            <a href="#" class="heart-link" id="heart-9" data-message-id="msg9" onclick="openPopup(this)">😍</a>
+            <a href="#" class="heart-link" id="heart-10" data-message-id="msg10" onclick="openPopup(this)">🌹</a>
+            <a href="#" class="heart-link" id="heart-11" data-message-id="msg11" onclick="openPopup(this)">💍</a> <a href="#" class="heart-link" id="heart-12" data-message-id="msg12" onclick="openPopup(this)">🥂</a> <a href="#" class="heart-link" id="heart-13" data-message-id="msg13" onclick="openPopup(this)">✨</a> <a href="#" class="heart-link" id="heart-14" data-message-id="msg14" onclick="openPopup(this)">😘</a> <a href="#" class="heart-link" id="heart-15" data-message-id="msg15" onclick="openPopup(this)">🥂</a> <a href="#" class="heart-link" id="heart-16" data-message-id="msg16" onclick="openPopup(this)">❤️</a> </div>
+    </div>
+
+    <div id="my-popup" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closePopup()">&times;</span>
+            <p id="popup-text">A sua mensagem de amor aparecerá aqui!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
