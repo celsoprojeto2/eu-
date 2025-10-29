@@ -10,7 +10,9 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    height: 100vh;
+    /* No celular, a altura precisa ser dinâmica */
+    min-height: 100vh;
+    height: auto;
     color: #333;
 }
 
@@ -20,6 +22,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100%;
 }
 
 .login-box {
@@ -28,6 +31,7 @@ body {
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
     text-align: center;
+    max-width: 90%; /* Adaptação para celular */
 }
 
 .login-box h2 {
@@ -42,8 +46,13 @@ body {
     border-radius: 8px;
     display: block;
     width: 250px;
+    max-width: 100%; /* Adaptação para celular */
+    box-sizing: border-box; /* Garante que padding não estoure a caixa */
     font-size: 16px;
     text-align: center;
+    /* Alinha o input ao centro no celular */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .login-box button {
@@ -72,6 +81,7 @@ body {
     text-align: center;
     padding: 20px;
     min-height: 100vh;
+    height: auto;
 }
 
 header {
@@ -85,11 +95,11 @@ header h1 {
     font-size: 2.5em;
 }
 
-/* --- ESTILOS DOS CORAÇÕES-LINK FLUTUANTES E ALEATÓRIOS --- */
+/* --- ESTILOS DOS CORAÇÕES (DESKTOP) --- */
 .heart-links-container {
     position: relative;
     width: 100%;
-    min-height: 85vh; /* Aumentado a altura para caber mais corações */
+    min-height: 85vh;
 }
 
 .heart-link {
@@ -99,8 +109,6 @@ header h1 {
     cursor: pointer;
     display: block;
     transition: transform 0.5s, opacity 0.5s;
-    
-    /* Transparência inicial */
     opacity: 0.3; 
 }
 
@@ -109,7 +117,7 @@ header h1 {
     opacity: 0.7;
 }
 
-/* Estilo para coração JÁ CLICADO (sem transparência) */
+/* Estilo para coração JÁ CLICADO */
 .heart-link.clicked {
     opacity: 1; 
     transform: scale(1.2);
@@ -123,7 +131,7 @@ header h1 {
     100% { transform: scale(1.2); }
 }
 
-/* --- POSICIONAMENTO E ROTAÇÃO INDIVIDUAL DOS 16 CORAÇÕES --- */
+/* --- POSICIONAMENTO E ROTAÇÃO INDIVIDUAL DOS 16 CORAÇÕES (DESKTOP) --- */
 
 #heart-1 { top: 5%; left: 10%; font-size: 90px; transform: rotate(-15deg); }
 #heart-2 { top: 25%; left: 85%; font-size: 60px; transform: rotate(45deg); }
@@ -144,7 +152,7 @@ header h1 {
 
 
 /* --- ESTILOS DO MODAL/POPUP --- */
-.modal {
+.modal { /* ... (mantido como está, é naturalmente responsivo) ... */
     display: none; 
     position: fixed;
     z-index: 10; 
@@ -193,4 +201,54 @@ header h1 {
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-50px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ========================================================= */
+/* --- ADAPTAÇÃO PARA TELAS DE CELULAR (Media Query) --- */
+/* ========================================================= */
+@media (max-width: 600px) {
+    /* 1. Mudar o container de corações */
+    .heart-links-container {
+        position: static; /* Remove o posicionamento absoluto */
+        display: flex; /* Usa Flexbox para organizar */
+        flex-wrap: wrap; /* Permite que os corações quebrem a linha */
+        justify-content: center; /* Centraliza os corações */
+        align-items: center;
+        min-height: auto; /* A altura se ajusta ao conteúdo */
+        padding: 20px 0;
+    }
+
+    /* 2. Mudar o estilo individual do coração */
+    .heart-link {
+        position: static; /* Remove o posicionamento absoluto */
+        font-size: 55px; /* Tamanho menor no celular */
+        margin: 10px; /* Adiciona espaçamento entre eles */
+        transform: none !important; /* Remove a rotação para melhor visualização */
+        
+        /* Remove o efeito de hover que não funciona bem em touch */
+        transition: opacity 0.5s; 
+    }
+
+    /* 3. Remover posicionamento e tamanho individual (para evitar conflito) */
+    #heart-1, #heart-2, #heart-3, #heart-4, #heart-5, #heart-6, 
+    #heart-7, #heart-8, #heart-9, #heart-10, #heart-11, #heart-12, 
+    #heart-13, #heart-14, #heart-15, #heart-16 {
+        top: auto; 
+        left: auto; 
+        font-size: 55px; /* Tamanho padrão para celular */
+        transform: none; /* Garante que a rotação seja removida */
+    }
+
+    /* 4. Ajustar títulos */
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    /* 5. Ajustar modal para celular */
+    .modal-content {
+        margin: 5% auto; /* Move para o topo */
+        max-width: 95%; 
+        padding: 20px;
+    }
 }
