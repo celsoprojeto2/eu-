@@ -1,5 +1,5 @@
 // --- CONFIGURAÇÃO DA SENHA ---
-const CORRECT_PASSWORD = "eu+";
+const CORRECT_PASSWORD = "eu+"; // <<< EDITE ESTA SENHA!
 
 function checkPassword() {
     const enteredPassword = document.getElementById('password-input').value;
@@ -48,7 +48,7 @@ function openPopup(heartElement) {
     const modal = document.getElementById('my-popup');
     const popupText = document.getElementById('popup-text');
     
-    // 1. Marca o coração como clicado (remove a transparência e aplica o estilo 'clicked')
+    // 1. Marca o coração como clicado (perde a transparência)
     heartElement.classList.add('clicked');
     
     // 2. Exibe a mensagem correspondente
@@ -58,9 +58,10 @@ function openPopup(heartElement) {
         popupText.innerHTML = "Erro ao carregar mensagem. 😢";
     }
 
+    // 3. Torna o modal visível
     modal.style.display = 'block';
 
-    // Impede a navegação padrão do link
+    // Impede a navegação padrão do link e garante que o popup funcione
     return false; 
 }
 
