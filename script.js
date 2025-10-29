@@ -29,16 +29,16 @@ const messages = {
     'msg4': '💌 Acho que nosso amor é que nem vinho, encorpora e fica mais saboroso com o passar do tempo, nem sei se vinho encorpora mas que se lasque, o importante é a frase funcionar!',
     'msg5': '💓 Não sei se vc percebeu mas coloquei 16 icones para comemorar os 16 anos de namoro/casamento, agora para criar 16 frases ta foda kkkk',
     'msg6': '💞 As vezes relembro tudo que passamos juntos, limitado pela minha memoria falha, e fico imaginando quanto tempo mais temos pela frente, ai me vem um sentimenro... CLIQUE NO ANEL',
-    'msg7': '💘 **7º Ano: A Aventura:** As viagens, os desafios e as vitórias que só compartilhamos. (Mude esta frase!)',
-    'msg8': '💗 **8º Ano: A Razão:** Você é a melhor parte do meu dia, todos os dias. Você é a minha razão para sorrir. (Mude esta frase!)',
-    'msg9': '😍 **9º Ano: O Olhar:** Sua beleza não está só no seu rosto, mas na sua alma. Você é linda por dentro e por fora. (Mude esta frase!)',
-    'msg10': '🌹 **10º Ano: O Marco:** Uma década ao seu lado! Meu amor, cada ano é melhor que o anterior. (Mude esta frase!)',
-    'msg11': '💍 **11º Ano: A Firmeza:** Nossa relação é como uma rocha, forte e inabalável. (Mude esta frase!)',
-    'msg12': '🥂 **12º Ano: As Celebrações:** Por todos os momentos que brindamos e pelos que ainda virão. (Mude esta frase!)',
-    'msg13': '✨ **13º Ano: A Luz:** Você é a pessoa mais luminosa que eu conheço. Obrigado por iluminar minha vida. (Mude esta frase!)',
-    'msg14': '😘 **14º Ano: Carinho:** Mesmo depois de tanto tempo, seu abraço é o meu lugar favorito no mundo. (Mude esta frase!)',
-    'msg15': '🥂 **15º Ano: O Amor Maduro:** Olhar para trás e ver tudo que construímos me enche de orgulho. Te amo! (Mude esta frase!)',
-    'msg16': '❤️ **16º Ano: A Eternidade:** Feliz 16 anos, meu amor! Te amo hoje, amanhã e para sempre! Com todo meu carinho. Assinado: Seu "Eu+". (Mude esta frase!)'
+    'msg7': '💘 Este a gente sabe o que significa, desde o inicio a gente aponta o dedo um para o outro indicando o coração espetado com a flecha... não é muito frufru cuticuti? 💘 💘 vai para o proximo coração ',
+    'msg8': '💗 Eu queria ter te conhecido antes sabia... provavelmente minha vida não teria sido tão cheia de aventuras, mas eu conheceria o amor mais cedo e saberia dar valor a vida, dentro de um hospicio claro! vá para a rosa',
+    'msg9': '😍 Pqq eu sou vingativo, vc me zoa, eu te zouo ou zoo ou zuo sei la eu me zouo tb kkkk va para a estrela',
+    'msg10': '🌹 E é assim, nossa vida é cheia de declarações e gestos de amor, e eu sempre colocando uma pitada de zueira no meio de tudo, pq né? va para o rosto com corações nos olhos.',
+    'msg11': '💍 EU NÃO AGUENTO MAISSSSSSSSSSS  AHHHHHHHHH!!!! kkk zueira, eu não tenho escolha, kkkkkk vai para o coração com flecha no meio...',
+    'msg12': '🥂 Parabensssss, obrigado por fazer parte de minha vida e deixa-la mais emocionante, literalmente... va para o ultimo coração da tela.',
+    'msg13': '✨ De qualquer forma, estou usando meu tempo perdido tentando aprender a crias paginas de internet, para fazer esta homenagem, para te lembrar que é vc que me faz feliz todos os dias e pq eu te amo, muitoooo muitooo muitooo! va para a taça do lado do anel',
+    'msg14': '😘 Então é isso, é simples, vc é tudo pra mim, não quero nunca ficar longe de vc, sempre colado, tirando qdo eu quero ficar no computador ou quando ta calor... te amooo, vai para a outra taça.',
+    'msg15': '🥂 Feliz aniverssárioooo....  opaaa... não... aqui ainda esta em construção... aguarde...',
+    'msg16': '❤️ Eu mais lalala, ja to começando a encher linguiça, kacete, qundo a gente tiver 50 anos juntos, serão 50 frazes, to fudido... va para a carinha com beijinho..'
 };
 
 
@@ -77,6 +77,7 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 }
+
 
 
 
