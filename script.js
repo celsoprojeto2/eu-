@@ -11,9 +11,9 @@ function checkPassword() {
         loginScreen.style.display = 'none';
         mainContent.style.display = 'block';
         document.body.style.height = 'auto';
-        document.title = "❤️ FELIZ 16 ANOS, MEU AMOR! ❤️"; 
+        document.title = "❤️ EITA PORRA!!! 16 ANOS DE PURO AMOR, TRETA E MUITA RISADA! ❤️"; 
     } else {
-        message.textContent = 'Senha incorreta. Tente novamente, meu amor.';
+        message.textContent = 'Senha incorreta. Tente novamente, Dica: é umas das frases curtas que mais usamos, contem um pronome pessoal direto e uma operação matematica conhecida, tudo junto!';
         document.getElementById('password-input').value = '';
     }
 }
@@ -77,3 +77,4 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 }
+
