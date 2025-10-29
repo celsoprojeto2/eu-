@@ -1,7 +1,7 @@
 /* --- ESTILOS GERAIS E PAPEL DE PAREDE --- */
 body {
     background-color: #ffffff; 
-    /* Papel de parede de corações delicados (rosa e vermelho com transparência) */
+    /* Papel de parede de corações delicados */
     background-image: 
         radial-gradient(circle, rgba(255, 192, 203, 0.4) 1px, transparent 1px),
         radial-gradient(circle, rgba(255, 0, 0, 0.3) 1px, transparent 1px);
@@ -40,7 +40,7 @@ body {
 
 #password-input {
     padding: 12px;
-    margin: 15px auto; /* Centraliza no celular */
+    margin: 15px auto;
     border: 2px solid #ffc0cb;
     border-radius: 8px;
     display: block;
@@ -100,13 +100,13 @@ header h1 {
 
 .heart-link {
     position: absolute;
-    font-size: 70px;
+    font-size: 70px; /* Tamanho base (desktop) */
     text-decoration: none;
     cursor: pointer;
     display: block;
     transition: transform 0.5s, opacity 0.5s;
     opacity: 0.3; 
-    line-height: 1; /* Garante que o emoji não tenha espaçamento extra */
+    line-height: 1; 
 }
 
 .heart-link:hover {
@@ -129,7 +129,6 @@ header h1 {
 }
 
 /* --- POSICIONAMENTO E ROTAÇÃO INDIVIDUAL DOS 16 CORAÇÕES (DESKTOP) --- */
-/* Estes estilos só se aplicam no desktop por causa da Media Query abaixo */
 #heart-1 { top: 5%; left: 10%; font-size: 90px; transform: rotate(-15deg); }
 #heart-2 { top: 25%; left: 85%; font-size: 60px; transform: rotate(45deg); }
 #heart-3 { top: 50%; left: 35%; font-size: 100px; transform: rotate(-30deg); }
@@ -150,55 +149,14 @@ header h1 {
 
 /* --- ESTILOS DO MODAL/POPUP (SEM ALTERAÇÃO) --- */
 .modal {
-    display: none; 
-    position: fixed;
-    z-index: 10; 
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.5); 
+    /* ... */
 }
 
 .modal-content {
-    background-color: #fff0f5; 
-    margin: 15% auto;
-    padding: 30px;
-    border: 5px solid #ff69b4;
-    width: 90%;
-    max-width: 450px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.7);
-    text-align: center;
-    animation: fadeIn 0.5s;
+    /* ... */
 }
 
-#popup-text {
-    font-size: 1.2em;
-    color: #ff1493;
-    font-weight: 600;
-}
-
-.close-button {
-    color: #ff1499;
-    float: right;
-    font-size: 35px;
-    font-weight: bold;
-    line-height: 20px;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.close-button:hover,
-.close-button:focus {
-    color: #ff0000;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-50px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+/* ... restante do modal ... */
 
 
 /* ========================================================= */
@@ -214,47 +172,47 @@ header h1 {
         font-size: 0.9em;
     }
 
-    /* 1. Mudar o container para Flexbox com espaçamento */
+    /* 1. CONTAINER: Força Flexbox para organização em linhas */
     .heart-links-container {
         position: static; 
         display: flex; 
         flex-wrap: wrap; 
-        justify-content: space-around; /* Distribui o espaço entre os itens */
-        align-items: flex-start; /* Alinha no topo */
+        /* Centraliza os corações */
+        justify-content: center; 
+        align-items: center;
         min-height: auto; 
         padding: 10px 0;
-        margin: 0;
     }
 
-    /* 2. Mudar o estilo individual do coração */
+    /* 2. CORAÇÕES: Reduz o tamanho e remove posicionamentos fixos */
     .heart-link {
         position: static; 
-        font-size: 50px; /* Tamanho ligeiramente menor */
-        /* Margem para garantir espaço e evitar sobreposição */
+        font-size: 30px; /* **TAMANHO REDUZIDO EM 50% OU MAIS** */
+        
+        /* Margem de 10px para garantir espaço ao redor de cada coração */
         margin: 10px; 
-        /* Define a largura para 3 corações por linha (aprox.) */
-        flex-basis: 25%; 
+        
+        /* Define a largura para que caiba mais de 3 por linha */
+        flex-basis: auto; 
         text-align: center;
         transform: none !important; 
         line-height: 1; 
-        opacity: 0.3; /* Mantém a transparência para o estado não-clicado */
     }
     
-    .heart-link.clicked {
-        /* Garante que o estado clicado funcione corretamente */
-        opacity: 1; 
-        transform: none;
-        animation: none;
-    }
-
     /* 3. Desativa o posicionamento absoluto (Desktop) no celular */
     #heart-1, #heart-2, #heart-3, #heart-4, #heart-5, #heart-6, 
     #heart-7, #heart-8, #heart-9, #heart-10, #heart-11, #heart-12, 
     #heart-13, #heart-14, #heart-15, #heart-16 {
         top: auto; 
         left: auto; 
-        font-size: 50px; 
+        font-size: 30px; /* **TAMANHO UNIFICADO E REDUZIDO** */
         transform: none; 
+    }
+    
+    .heart-link.clicked {
+        opacity: 1; 
+        transform: none;
+        animation: none;
     }
 
     /* 4. Ajustar modal para celular */
