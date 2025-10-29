@@ -23,10 +23,10 @@ function checkPassword() {
 
 // **IMPORTANTE: 16 MENSAGENS PARA VOCÊ EDITAR**
 const messages = {
-    'msg1': '💖 **1º Ano: O Início:** Nossas primeiras risadas, o frio na barriga e a certeza de que tínhamos algo especial. Você é a magia nos meus dias. (Mude esta frase!)',
-    'msg2': '❤️ **2º Ano: A Descoberta:** Descobrir sua alma e seu coração foi o maior presente. (Mude esta frase!)',
-    'msg3': '💕 **3º Ano: A Conexão:** Nossas conversas, risadas bobas e a cumplicidade que só a gente tem... É por isso que te amo tanto! (Mude esta frase!)',
-    'msg4': '💌 **4º Ano: O Compromisso:** Quando dissemos "sim" para a vida inteira. Lembro de cada detalhe daquele dia. (Mude esta frase!)',
+    'msg1': '💖 Caramba, não clique no primeiro pq perde a graça né, o primeiro sempre contem a primeira mensagem e normalmente é só enrolação, agora não vai abrir o segundo né!?!',
+    'msg2': '❤️ Não acredito que clicou no segundo!!! te amo, mais que ontem, e menos que amanhã!',
+    'msg3': '💕 Você não sabe como é maravilhoso ter uma pessoa como vc em minha vida, é muito mais que o ar que eu respiro, muito mais que a luz da minha vida! é tudo!',
+    'msg4': '💌 Acho que nosso amor é que nem vinho, encorpora e fica mais saboroso com o passar do tempo, nem sei se vinho encorpora mas que se lasque, o importante é a frase funcionar!',
     'msg5': '💓 **5º Ano: A Família:** Nossos sonhos, nossos planos, a base do nosso ninho. (Mude esta frase!)',
     'msg6': '💞 **6º Ano: Admiração:** Admiro a sua força, o seu caráter e a sua doçura. Você me inspira a ser melhor. (Mude esta frase!)',
     'msg7': '💘 **7º Ano: A Aventura:** As viagens, os desafios e as vitórias que só compartilhamos. (Mude esta frase!)',
@@ -77,4 +77,5 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 }
+
 
